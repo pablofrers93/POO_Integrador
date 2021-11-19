@@ -58,5 +58,10 @@ namespace POO_Integrador.WINDOWS
         {
             return true;
         }
+
+        private void CancelarButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

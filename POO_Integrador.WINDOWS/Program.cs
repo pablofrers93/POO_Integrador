@@ -16,7 +16,7 @@ namespace POO_Integrador.WINDOWS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLibrosEdit());
+            Application.Run(new Form1());
         }
     }
 }

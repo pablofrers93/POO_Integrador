@@ -10,7 +10,7 @@ namespace POO_Integrador.DATOS
     public class RepositorioLibros
     {
         private List<Libro> listaLibros;
-        public static RepositorioLibros _instancia = null;
+        public static RepositorioLibros _instancia;
         private ManejadorDeArchivo manejador;
 
 

@@ -19,7 +19,9 @@ namespace POO_Integrador.WINDOWS
             InitializeComponent();
             
         }
+        
         private List<Libro> lista;
+
         private int cantidadDeRegistros;
 
         private void Form1_Load(object sender, EventArgs e)
@@ -35,7 +37,7 @@ namespace POO_Integrador.WINDOWS
 
         private void MostrarDatosEnGrilla()
         {
-            DatosDataGridView.Rows.Clear();
+            //DatosDataGridView.Rows.Clear();
             foreach (var libro in lista)
             {
                 DataGridViewRow r = ConstruirFila();
@@ -55,10 +57,10 @@ namespace POO_Integrador.WINDOWS
 
             r.Tag = libro;
         }
-
-        private void AgregarFila(DataGridViewRow)
+        
+        private void AgregarFila(DataGridViewRow r)
         {
-            
+            DatosDataGridView.Rows.Add(r);
         }
 
         private DataGridViewRow ConstruirFila()
@@ -109,6 +111,66 @@ namespace POO_Integrador.WINDOWS
             DataGridViewRow r = ConstruirFila();
             SetearFila(r, libro);
             AgregarFila(r);
+            ActualizarContadorRegistros();
+            MessageBox.Show("Registro Agregado");
+
+        }
+
+        private void ActualizarContadorRegistros()
+        {
+            CantidadRegistrosLabel.Text = RepositorioLibros.GetInstancia().GetCantidad().ToString();
+        }
+
+        private void SalirToolStripButton6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+      
+        private void BorrarToolStripButton2_Click(object sender, EventArgs e)
+        {
+            if(DatosDataGridView.SelectedRows.Count==0)
+            {
+                return;
+            }
+
+            DataGridViewRow r = DatosDataGridView.SelectedRows[0];
+            Libro libro = (Libro)r.Tag;
+
+            const string mensaje = "¿Desea borrar el registro seleccionado?";
+            const string caption = "Cerrar";
+            DialogResult dr = MessageBox.Show(mensaje, caption,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+                
+            if (dr==DialogResult.Yes)
+
+            {
+                RepositorioLibros.GetInstancia().Remover(libro);
+                DatosDataGridView.Rows.Remove(r);
+                MessageBox.Show("Registro Borrado");
+                ActualizarContadorRegistros();
+            }
+        }
+
+        private void EditarToolStripButton3_Click(object sender, EventArgs e)
+        {
+            if (DatosDataGridView.SelectedRows.Count==0)
+            {
+                return;
+            }
+
+            DataGridViewRow r = DatosDataGridView.SelectedRows[0];
+            Libro libro = (Libro)r.Tag;
+
+        }
+
+        private void FiltrarToolStripButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ActualizarToolStripButton5_Click(object sender, EventArgs e)
+        {
 
         }
     }
