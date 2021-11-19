@@ -10,8 +10,8 @@ namespace POO_Integrador.DATOS
 {
     public class ManejadorDeArchivo
     {
-        private readonly string _archivo=Environment.CurrentDirectory+@"\Libros.txt";
-        private readonly string _archivoBAK = Environment.CurrentDirectory + @"\Libros.bak";
+        public string _archivo=Environment.CurrentDirectory+@"\Libros.txt";
+        public string _archivoBAK = Environment.CurrentDirectory + @"\Libros.bak";
 
 
         public ManejadorDeArchivo()

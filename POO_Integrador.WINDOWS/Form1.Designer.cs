@@ -40,15 +40,15 @@ namespace POO_Integrador.WINDOWS
             this.SalirToolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.DatosDataGridView = new System.Windows.Forms.DataGridView();
-            this.CantidadRegistrosLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColEditorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTema = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPaginas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColISBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.CantidadRegistrosLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.BarraHerramientasToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -94,6 +94,7 @@ namespace POO_Integrador.WINDOWS
             this.BorrarToolStripButton2.Size = new System.Drawing.Size(43, 35);
             this.BorrarToolStripButton2.Text = "Borrar";
             this.BorrarToolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BorrarToolStripButton2.Click += new System.EventHandler(this.BorrarToolStripButton2_Click);
             // 
             // EditarToolStripButton3
             // 
@@ -104,6 +105,7 @@ namespace POO_Integrador.WINDOWS
             this.EditarToolStripButton3.Size = new System.Drawing.Size(41, 35);
             this.EditarToolStripButton3.Text = "Editar";
             this.EditarToolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.EditarToolStripButton3.Click += new System.EventHandler(this.EditarToolStripButton3_Click);
             // 
             // FiltrarToolStripButton4
             // 
@@ -114,6 +116,7 @@ namespace POO_Integrador.WINDOWS
             this.FiltrarToolStripButton4.Size = new System.Drawing.Size(41, 35);
             this.FiltrarToolStripButton4.Text = "Filtrar";
             this.FiltrarToolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.FiltrarToolStripButton4.Click += new System.EventHandler(this.FiltrarToolStripButton4_Click);
             // 
             // ActualizarToolStripButton5
             // 
@@ -124,6 +127,7 @@ namespace POO_Integrador.WINDOWS
             this.ActualizarToolStripButton5.Size = new System.Drawing.Size(63, 35);
             this.ActualizarToolStripButton5.Text = "Actualizar";
             this.ActualizarToolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ActualizarToolStripButton5.Click += new System.EventHandler(this.ActualizarToolStripButton5_Click);
             // 
             // toolStripSeparator2
             // 
@@ -139,6 +143,7 @@ namespace POO_Integrador.WINDOWS
             this.SalirToolStripButton6.Size = new System.Drawing.Size(33, 35);
             this.SalirToolStripButton6.Text = "Salir";
             this.SalirToolStripButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.SalirToolStripButton6.Click += new System.EventHandler(this.SalirToolStripButton6_Click);
             // 
             // splitContainer1
             // 
@@ -186,32 +191,6 @@ namespace POO_Integrador.WINDOWS
             this.DatosDataGridView.TabIndex = 0;
             this.DatosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // CantidadRegistrosLabel
-            // 
-            this.CantidadRegistrosLabel.AutoSize = true;
-            this.CantidadRegistrosLabel.Location = new System.Drawing.Point(139, 18);
-            this.CantidadRegistrosLabel.Name = "CantidadRegistrosLabel";
-            this.CantidadRegistrosLabel.Size = new System.Drawing.Size(13, 13);
-            this.CantidadRegistrosLabel.TabIndex = 1;
-            this.CantidadRegistrosLabel.Text = "0";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cantidad de Registros";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(649, 64);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView2.TabIndex = 2;
-            // 
             // ColNombre
             // 
             this.ColNombre.HeaderText = "Nombre";
@@ -247,6 +226,32 @@ namespace POO_Integrador.WINDOWS
             this.ColAutor.HeaderText = "Autor";
             this.ColAutor.Name = "ColAutor";
             this.ColAutor.ReadOnly = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(649, 64);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView2.TabIndex = 2;
+            // 
+            // CantidadRegistrosLabel
+            // 
+            this.CantidadRegistrosLabel.AutoSize = true;
+            this.CantidadRegistrosLabel.Location = new System.Drawing.Point(139, 18);
+            this.CantidadRegistrosLabel.Name = "CantidadRegistrosLabel";
+            this.CantidadRegistrosLabel.Size = new System.Drawing.Size(13, 13);
+            this.CantidadRegistrosLabel.TabIndex = 1;
+            this.CantidadRegistrosLabel.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Cantidad de Registros";
             // 
             // Form1
             // 

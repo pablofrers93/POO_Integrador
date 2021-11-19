@@ -84,6 +84,7 @@ namespace POO_Integrador.WINDOWS
             this.CancelarButton.Text = "Cancelar";
             this.CancelarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.CancelarButton.UseVisualStyleBackColor = true;
+            this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
             // 
             // errorProvider1
             // 
