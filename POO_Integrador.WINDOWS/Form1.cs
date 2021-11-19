@@ -57,7 +57,7 @@ namespace POO_Integrador.WINDOWS
 
             r.Tag = libro;
         }
-
+        
         private void AgregarFila(DataGridViewRow r)
         {
             DatosDataGridView.Rows.Add(r);
