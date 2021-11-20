@@ -17,6 +17,7 @@ namespace POO_Integrador.WINDOWS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            
         }
     }
 }

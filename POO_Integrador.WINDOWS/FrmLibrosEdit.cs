@@ -49,7 +49,7 @@ namespace POO_Integrador.WINDOWS
             DialogResult = DialogResult.OK;
         }
 
-        internal Libro GetLibro()
+        public Libro GetLibro()
         {
             return libro; 
         }
@@ -61,7 +61,7 @@ namespace POO_Integrador.WINDOWS
 
         private void CancelarButton_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

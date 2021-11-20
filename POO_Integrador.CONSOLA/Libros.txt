@@ -1,12 +1,12 @@
-﻿"Cien años de soledad",2,5,250,123456,"Gabriel Garcia Marquez"
-"Cementerio de animales",5,3,250,123456,"Stephen King"
-"El cuarto oscuro",2,4,250,123456,"Lara Rodriguez"
-"El dia despues de mañana",1,2,250,123456,"Pedro Castro"
-"Filosofia a martillazos",3,5,250,123456,"Dario Sztajnszrajber"
-"Notas al pie",5,1,250,123456,"Alejandro Dolina"
-"La dama oscura",5,5,250,123456,"Cristina Perez"
-"No soy nada sin tu amor",5,5,250,123456,"Faur Patricia"
-"El caso Hartung",2,3,250,123456,"Sveistrup Soren"
-"El libro de escribir"",3,1,250,123456,"Bejerman Gabriela"
-"Los ultimos",1,2,250,123456,"Helfer Monika"
-"El corazon de Heidegger",1,1,250,123456,"Han Byung Chul"
+﻿Cien años de soledad,2,5,250,123456,Gabriel Garcia Marquez
+Cementerio de animales,5,3,250,123456,Stephen King
+El cuarto oscuro,2,4,250,123456,Lara Rodriguez
+El dia despues de mañana,1,2,250,123456,Pedro Castro
+Filosofia a martillazos,3,5,250,123456,Dario Sztajnszrajber
+Notas al pie,5,1,250,123456,Alejandro Dolina
+La dama oscura,5,5,250,123456,Cristina Perez
+No soy nada sin tu amor,5,5,250,123456,Faur Patricia
+El caso Hartung,2,3,250,123456,Sveistrup Soren
+El libro de escribir,3,1,250,123456,Bejerman Gabriela
+Los ultimos,1,2,250,123456,Helfer Monika
+El corazon de Heidegger,1,1,250,123456,Han Byung Chul

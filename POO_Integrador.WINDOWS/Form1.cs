@@ -16,28 +16,35 @@ namespace POO_Integrador.WINDOWS
     {
         public Form1()
         {
-            InitializeComponent();
-            
+            InitializeComponent();     
         }
-        
+
         private List<Libro> lista;
+  
 
         private int cantidadDeRegistros;
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             cantidadDeRegistros = RepositorioLibros.GetInstancia().GetCantidad();
             if (cantidadDeRegistros>0)
             {
                 lista = RepositorioLibros.GetInstancia().GetLista();
                 MostrarDatosEnGrilla();
-                CantidadRegistrosLabel.Text = cantidadDeRegistros.ToString();
+                ActualizarContadorRegistros();
             }
+        }
+
+        private void RecargarGrilla()
+        {
+            lista = RepositorioLibros.GetInstancia().GetLista();
+            MostrarDatosEnGrilla();
         }
 
         private void MostrarDatosEnGrilla()
         {
-            //DatosDataGridView.Rows.Clear();
+            DatosDataGridView.Rows.Clear();
             foreach (var libro in lista)
             {
                 DataGridViewRow r = ConstruirFila();
@@ -57,7 +64,7 @@ namespace POO_Integrador.WINDOWS
 
             r.Tag = libro;
         }
-        
+            
         private void AgregarFila(DataGridViewRow r)
         {
             DatosDataGridView.Rows.Add(r);
@@ -118,6 +125,7 @@ namespace POO_Integrador.WINDOWS
 
         private void ActualizarContadorRegistros()
         {
+     
             CantidadRegistrosLabel.Text = RepositorioLibros.GetInstancia().GetCantidad().ToString();
         }
 
@@ -171,7 +179,11 @@ namespace POO_Integrador.WINDOWS
 
         private void ActualizarToolStripButton5_Click(object sender, EventArgs e)
         {
-
+            ActualizarContadorRegistros();
+            lista = RepositorioLibros.GetInstancia().GetLista();
+            MostrarDatosEnGrilla();
         }
+
+        
     }
 }

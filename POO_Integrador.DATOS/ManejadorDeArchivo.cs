@@ -10,7 +10,7 @@ namespace POO_Integrador.DATOS
 {
     public class ManejadorDeArchivo
     {
-        public string _archivo=Environment.CurrentDirectory+@"\Libros.txt";
+        public string _archivo = Environment.CurrentDirectory + @"\Libros.txt";
         public string _archivoBAK = Environment.CurrentDirectory + @"\Libros.bak";
 
 
@@ -33,11 +33,11 @@ namespace POO_Integrador.DATOS
                 }
                 lector.Close();
             }
-            return lista; 
-            
+            return lista;
+
         }
 
-       
+
         private Libro ConstruirLibro(string linea)
         {
             var campos = linea.Split(',');
@@ -74,7 +74,7 @@ namespace POO_Integrador.DATOS
         public void Agregar(Libro libro)
         {
             StreamWriter escritor = new StreamWriter(_archivo, true);
-            var linea = ConstruirLinea(libro); 
+            var linea = ConstruirLinea(libro);
             escritor.WriteLine(linea);
             escritor.Close();
         }
