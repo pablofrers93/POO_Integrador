@@ -63,6 +63,7 @@ namespace POO_Integrador.WINDOWS
             this.LibroTextBox.Name = "LibroTextBox";
             this.LibroTextBox.Size = new System.Drawing.Size(100, 20);
             this.LibroTextBox.TabIndex = 1;
+            this.LibroTextBox.TextChanged += new System.EventHandler(this.LibroTextBox_TextChanged);
             // 
             // OkButton
             // 

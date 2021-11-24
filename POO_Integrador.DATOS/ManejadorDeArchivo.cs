@@ -52,6 +52,26 @@ namespace POO_Integrador.DATOS
             };
         }
 
+        internal void Editar(Libro libro_Original, Libro libroModificado)
+        {
+            StreamReader lector = new StreamReader(_archivo);
+            StreamWriter escritor = new StreamWriter(_archivoBAK);
+            while (!lector.EndOfStream)
+            {
+                var linea = lector.ReadLine();
+                Libro libroEnArchivo = ConstruirLibro(linea);
+                if (libroEnArchivo.Equals(libro_Original))
+                {
+                    linea = ConstruirLinea(libroModificado);         
+                }
+                escritor.WriteLine(linea);
+            }
+            lector.Close();
+            escritor.Close();
+            File.Delete(_archivo);
+            File.Move(_archivoBAK, _archivo);
+        }
+
         internal void BorrarDeArchivo(Libro libroBorrar)
         {
             StreamReader lector = new StreamReader(_archivo);

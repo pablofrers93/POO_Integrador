@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace POO_Integrador.ENTIDADES
 {
-    public class Libro
+    public class Libro:ICloneable
     {
         public string NombreLibro { get; set; }
         public Editorial Editorial { get; set; }
@@ -15,6 +15,10 @@ namespace POO_Integrador.ENTIDADES
         public int Isbn { get; set; }
         public string Autor { get; set; }
 
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
         public override bool Equals(object obj)
         {
             if (obj ==null || !(obj is Libro))

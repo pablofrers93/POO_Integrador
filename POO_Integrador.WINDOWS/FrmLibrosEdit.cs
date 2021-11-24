@@ -19,6 +19,21 @@ namespace POO_Integrador.WINDOWS
             InitializeComponent();
         }
 
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            if (libro!=null)
+            {
+                LibroTextBox.Text = libro.NombreLibro;
+                EditorialComboBox.SelectedItem = libro.Editorial;
+                TemaComboBox.SelectedItem = libro.Tema;
+                IsbnTextBox.Text = Convert.ToString(libro.Isbn);
+                PaginasTextBox.Text = Convert.ToString(libro.Paginas);
+                AutorTextBox.Text = Convert.ToString(libro.Autor);
+            }
+
+        }
+
         private void FrmLibrosEdit_Load(object sender, EventArgs e)
         {
             CargarDatosCombos(ref TemaComboBox, ref EditorialComboBox);
@@ -62,6 +77,16 @@ namespace POO_Integrador.WINDOWS
         private void CancelarButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        internal void SetLibro(Libro libroCopia)
+        {
+            libro = libroCopia;
+        }
+
+        private void LibroTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -167,15 +167,31 @@ namespace POO_Integrador.WINDOWS
                 return;
             }
 
-            DataGridViewRow r = DatosDataGridView.SelectedRows[0];
+            var r = DatosDataGridView.SelectedRows[0];           
             Libro libro = (Libro)r.Tag;
+            Libro libroCopia = (Libro)libro.Clone();
+            FrmLibrosEdit frm = new FrmLibrosEdit() {Text= "Editar Libro" };
+            frm.SetLibro(libroCopia);
+            DialogResult dr = frm.ShowDialog(this);
+            if (dr==DialogResult.Cancel)
+            {
+                return;
+            }
+
+            libroCopia = frm.GetLibro();
+            if (RepositorioLibros.GetInstancia().Existe(libroCopia))
+            {
+                MessageBox.Show("El libro ya existe");
+                return;
+            }
+
+            RepositorioLibros.GetInstancia().Editar(libro, libroCopia);
+            SetearFila(r, libroCopia);
+            MessageBox.Show("Se modificó el registro");
+
 
         }
 
-        private void FiltrarToolStripButton4_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void ActualizarToolStripButton5_Click(object sender, EventArgs e)
         {
