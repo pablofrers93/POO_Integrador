@@ -48,9 +48,12 @@ namespace POO_Integrador.DATOS
             listaLibros.Remove(libro);
         }
 
-        public void Editar(Libro libro)
+        public void Editar(Libro libro_Original, Libro libroModificado)
         {
-            //DESARROLLAR
+            manejador.Editar(libro_Original, libroModificado);
+            int index = listaLibros.IndexOf(libro_Original);
+            listaLibros.RemoveAt(index);
+            listaLibros.Insert(index, libroModificado);
         }
 
         public bool Existe(Libro libro)

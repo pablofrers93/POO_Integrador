@@ -34,28 +34,25 @@ namespace POO_Integrador.WINDOWS
             this.NuevoToolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.BorrarToolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.EditarToolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.FiltrarToolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.ActualizarToolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.SalirToolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.DatosDataGridView = new System.Windows.Forms.DataGridView();
+            this.CantidadRegistrosLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColEditorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTema = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPaginas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColISBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.CantidadRegistrosLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.BarraHerramientasToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatosDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // BarraHerramientasToolStrip
@@ -64,13 +61,12 @@ namespace POO_Integrador.WINDOWS
             this.NuevoToolStripButton1,
             this.BorrarToolStripButton2,
             this.EditarToolStripButton3,
-            this.FiltrarToolStripButton4,
             this.ActualizarToolStripButton5,
             this.toolStripSeparator2,
             this.SalirToolStripButton6});
             this.BarraHerramientasToolStrip.Location = new System.Drawing.Point(0, 0);
             this.BarraHerramientasToolStrip.Name = "BarraHerramientasToolStrip";
-            this.BarraHerramientasToolStrip.Size = new System.Drawing.Size(800, 38);
+            this.BarraHerramientasToolStrip.Size = new System.Drawing.Size(904, 38);
             this.BarraHerramientasToolStrip.TabIndex = 0;
             this.BarraHerramientasToolStrip.Text = "toolStrip1";
             // 
@@ -106,17 +102,6 @@ namespace POO_Integrador.WINDOWS
             this.EditarToolStripButton3.Text = "Editar";
             this.EditarToolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.EditarToolStripButton3.Click += new System.EventHandler(this.EditarToolStripButton3_Click);
-            // 
-            // FiltrarToolStripButton4
-            // 
-            this.FiltrarToolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("FiltrarToolStripButton4.Image")));
-            this.FiltrarToolStripButton4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.FiltrarToolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.FiltrarToolStripButton4.Name = "FiltrarToolStripButton4";
-            this.FiltrarToolStripButton4.Size = new System.Drawing.Size(41, 35);
-            this.FiltrarToolStripButton4.Text = "Filtrar";
-            this.FiltrarToolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.FiltrarToolStripButton4.Click += new System.EventHandler(this.FiltrarToolStripButton4_Click);
             // 
             // ActualizarToolStripButton5
             // 
@@ -159,10 +144,9 @@ namespace POO_Integrador.WINDOWS
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView2);
             this.splitContainer1.Panel2.Controls.Add(this.CantidadRegistrosLabel);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 412);
+            this.splitContainer1.Size = new System.Drawing.Size(904, 412);
             this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -187,15 +171,34 @@ namespace POO_Integrador.WINDOWS
             this.DatosDataGridView.Name = "DatosDataGridView";
             this.DatosDataGridView.ReadOnly = true;
             this.DatosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DatosDataGridView.Size = new System.Drawing.Size(800, 266);
+            this.DatosDataGridView.Size = new System.Drawing.Size(904, 266);
             this.DatosDataGridView.TabIndex = 0;
             this.DatosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // CantidadRegistrosLabel
+            // 
+            this.CantidadRegistrosLabel.AutoSize = true;
+            this.CantidadRegistrosLabel.Location = new System.Drawing.Point(139, 18);
+            this.CantidadRegistrosLabel.Name = "CantidadRegistrosLabel";
+            this.CantidadRegistrosLabel.Size = new System.Drawing.Size(13, 13);
+            this.CantidadRegistrosLabel.TabIndex = 1;
+            this.CantidadRegistrosLabel.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Cantidad de Registros";
             // 
             // ColNombre
             // 
             this.ColNombre.HeaderText = "Nombre";
             this.ColNombre.Name = "ColNombre";
             this.ColNombre.ReadOnly = true;
+            this.ColNombre.Width = 200;
             // 
             // ColEditorial
             // 
@@ -226,43 +229,21 @@ namespace POO_Integrador.WINDOWS
             this.ColAutor.HeaderText = "Autor";
             this.ColAutor.Name = "ColAutor";
             this.ColAutor.ReadOnly = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(649, 64);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView2.TabIndex = 2;
-            // 
-            // CantidadRegistrosLabel
-            // 
-            this.CantidadRegistrosLabel.AutoSize = true;
-            this.CantidadRegistrosLabel.Location = new System.Drawing.Point(139, 18);
-            this.CantidadRegistrosLabel.Name = "CantidadRegistrosLabel";
-            this.CantidadRegistrosLabel.Size = new System.Drawing.Size(13, 13);
-            this.CantidadRegistrosLabel.TabIndex = 1;
-            this.CantidadRegistrosLabel.Text = "0";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cantidad de Registros";
+            this.ColAutor.Width = 200;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(904, 450);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.BarraHerramientasToolStrip);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Biblioteca de Libros";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.BarraHerramientasToolStrip.ResumeLayout(false);
             this.BarraHerramientasToolStrip.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -271,7 +252,6 @@ namespace POO_Integrador.WINDOWS
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DatosDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,7 +263,6 @@ namespace POO_Integrador.WINDOWS
         private System.Windows.Forms.ToolStripButton NuevoToolStripButton1;
         private System.Windows.Forms.ToolStripButton BorrarToolStripButton2;
         private System.Windows.Forms.ToolStripButton EditarToolStripButton3;
-        private System.Windows.Forms.ToolStripButton FiltrarToolStripButton4;
         private System.Windows.Forms.ToolStripButton ActualizarToolStripButton5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton SalirToolStripButton6;
@@ -291,7 +270,6 @@ namespace POO_Integrador.WINDOWS
         private System.Windows.Forms.DataGridView DatosDataGridView;
         private System.Windows.Forms.Label CantidadRegistrosLabel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColEditorial;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTema;

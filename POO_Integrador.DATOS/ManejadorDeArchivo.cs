@@ -10,7 +10,7 @@ namespace POO_Integrador.DATOS
 {
     public class ManejadorDeArchivo
     {
-        public string _archivo=Environment.CurrentDirectory+@"\Libros.txt";
+        public string _archivo = Environment.CurrentDirectory + @"\Libros.txt";
         public string _archivoBAK = Environment.CurrentDirectory + @"\Libros.bak";
 
 
@@ -33,11 +33,11 @@ namespace POO_Integrador.DATOS
                 }
                 lector.Close();
             }
-            return lista; 
-            
+            return lista;
+
         }
 
-       
+
         private Libro ConstruirLibro(string linea)
         {
             var campos = linea.Split(',');
@@ -50,6 +50,26 @@ namespace POO_Integrador.DATOS
                 Isbn = int.Parse(campos[4]),
                 Autor = campos[5]
             };
+        }
+
+        internal void Editar(Libro libro_Original, Libro libroModificado)
+        {
+            StreamReader lector = new StreamReader(_archivo);
+            StreamWriter escritor = new StreamWriter(_archivoBAK);
+            while (!lector.EndOfStream)
+            {
+                var linea = lector.ReadLine();
+                Libro libroEnArchivo = ConstruirLibro(linea);
+                if (libroEnArchivo.Equals(libro_Original))
+                {
+                    linea = ConstruirLinea(libroModificado);         
+                }
+                escritor.WriteLine(linea);
+            }
+            lector.Close();
+            escritor.Close();
+            File.Delete(_archivo);
+            File.Move(_archivoBAK, _archivo);
         }
 
         internal void BorrarDeArchivo(Libro libroBorrar)
@@ -74,7 +94,7 @@ namespace POO_Integrador.DATOS
         public void Agregar(Libro libro)
         {
             StreamWriter escritor = new StreamWriter(_archivo, true);
-            var linea = ConstruirLinea(libro); 
+            var linea = ConstruirLinea(libro);
             escritor.WriteLine(linea);
             escritor.Close();
         }

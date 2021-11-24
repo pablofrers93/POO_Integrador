@@ -16,28 +16,35 @@ namespace POO_Integrador.WINDOWS
     {
         public Form1()
         {
-            InitializeComponent();
-            
+            InitializeComponent();     
         }
-        
+
         private List<Libro> lista;
+  
 
         private int cantidadDeRegistros;
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             cantidadDeRegistros = RepositorioLibros.GetInstancia().GetCantidad();
             if (cantidadDeRegistros>0)
             {
                 lista = RepositorioLibros.GetInstancia().GetLista();
                 MostrarDatosEnGrilla();
-                CantidadRegistrosLabel.Text = cantidadDeRegistros.ToString();
+                ActualizarContadorRegistros();
             }
+        }
+
+        private void RecargarGrilla()
+        {
+            lista = RepositorioLibros.GetInstancia().GetLista();
+            MostrarDatosEnGrilla();
         }
 
         private void MostrarDatosEnGrilla()
         {
-            //DatosDataGridView.Rows.Clear();
+            DatosDataGridView.Rows.Clear();
             foreach (var libro in lista)
             {
                 DataGridViewRow r = ConstruirFila();
@@ -57,7 +64,7 @@ namespace POO_Integrador.WINDOWS
 
             r.Tag = libro;
         }
-        
+            
         private void AgregarFila(DataGridViewRow r)
         {
             DatosDataGridView.Rows.Add(r);
@@ -118,6 +125,7 @@ namespace POO_Integrador.WINDOWS
 
         private void ActualizarContadorRegistros()
         {
+     
             CantidadRegistrosLabel.Text = RepositorioLibros.GetInstancia().GetCantidad().ToString();
         }
 
@@ -159,19 +167,39 @@ namespace POO_Integrador.WINDOWS
                 return;
             }
 
-            DataGridViewRow r = DatosDataGridView.SelectedRows[0];
+            var r = DatosDataGridView.SelectedRows[0];           
             Libro libro = (Libro)r.Tag;
+            Libro libroCopia = (Libro)libro.Clone();
+            FrmLibrosEdit frm = new FrmLibrosEdit() {Text= "Editar Libro" };
+            frm.SetLibro(libroCopia);
+            DialogResult dr = frm.ShowDialog(this);
+            if (dr==DialogResult.Cancel)
+            {
+                return;
+            }
+
+            libroCopia = frm.GetLibro();
+            if (RepositorioLibros.GetInstancia().Existe(libroCopia))
+            {
+                MessageBox.Show("El libro ya existe");
+                return;
+            }
+
+            RepositorioLibros.GetInstancia().Editar(libro, libroCopia);
+            SetearFila(r, libroCopia);
+            MessageBox.Show("Se modificó el registro");
+
 
         }
 
-        private void FiltrarToolStripButton4_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void ActualizarToolStripButton5_Click(object sender, EventArgs e)
         {
-
+            ActualizarContadorRegistros();
+            lista = RepositorioLibros.GetInstancia().GetLista();
+            MostrarDatosEnGrilla();
         }
+
+        
     }
 }

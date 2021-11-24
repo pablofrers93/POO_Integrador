@@ -89,6 +89,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\POO_Integrador.CONSOLA\POO_Integrador.CONSOLA.csproj">
+      <Project>{42d6b2aa-52dd-4e1f-a742-be5e20159bb0}</Project>
+      <Name>POO_Integrador.CONSOLA</Name>
+    </ProjectReference>
     <ProjectReference Include="..\POO_Integrador.DATOS\POO_Integrador.DATOS.csproj">
       <Project>{86accf44-01e7-4680-9636-b252223e1b90}</Project>
       <Name>POO_Integrador.DATOS</Name>
